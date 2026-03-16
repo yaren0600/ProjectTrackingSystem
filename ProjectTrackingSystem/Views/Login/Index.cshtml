@@ -18,17 +18,20 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
     <main class="form-signin w-100 m-auto">
-        
-           
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        //A helper method that initiates an HTML form to submit data to the Index action of the Login controller using the HTTP POST method.
+        {
+
+
             <h1 class="h3 mb-3 text-center fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" id="username" placeholder="username">
+                <input type="text" class="form-control" id="username" placeholder="username" name="username">
                 <label for="floatingInput">Username</label>
             </div>
             <br />
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -39,7 +42,7 @@
             </div>
             <br />
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-        
+        }
     </main>
 
 
