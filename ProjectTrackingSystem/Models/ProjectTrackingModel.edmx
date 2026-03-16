@@ -143,8 +143,8 @@
           <Property Name="assignmetId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="assignmentTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="assignmentDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="assignmentCreatedDate" Type="DateTime" />
-          <Property Name="assignmentSubmissionDate" Type="DateTime" />
+          <Property Name="assignmentCreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="assignmentSubmissionDate" Type="DateTime" Precision="3" />
           <Property Name="assignmentUserId" Type="Int32" />
           <Property Name="assignmentStatusId" Type="Int32" />
           <NavigationProperty Name="Statue" Relationship="Self.FK_Assignments_Statues" FromRole="Assignments" ToRole="Statues" />
@@ -246,7 +246,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ProjectTrackingSystemEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ProjectTrackingEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Assignments" EntityType="Self.Assignment" />
           <EntitySet Name="Classes" EntityType="Self.Class" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
@@ -275,7 +275,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ProjectTrackingSystemModelStoreContainer" CdmEntityContainer="ProjectTrackingSystemEntities">
+        <EntityContainerMapping StorageEntityContainer="ProjectTrackingSystemModelStoreContainer" CdmEntityContainer="ProjectTrackingEntities">
           <EntitySetMapping Name="Assignments">
             <EntityTypeMapping TypeName="ProjectTrackingSystemModel.Assignment">
               <MappingFragment StoreEntitySet="Assignments">
@@ -353,6 +353,7 @@
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

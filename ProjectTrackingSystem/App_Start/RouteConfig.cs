@@ -16,7 +16,7 @@ namespace ProjectTrackingSystem
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional } // Set the default controller to "Login" and the default action to "Index"
             );
         }
     }
